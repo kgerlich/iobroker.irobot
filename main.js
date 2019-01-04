@@ -129,7 +129,7 @@ function create_button(name, description, value) {
                 type: 'state',
                 common: {
                     name: description,
-                    role: 'button',
+                    role: 'state',
                     type: "boolean",
                     "read":  false,
                     "write": true
