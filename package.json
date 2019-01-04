@@ -35,7 +35,7 @@
   ],
   "dependencies": {
     "pretty-ms": "^4.0.0",
-    "dorita980": "^3.0.12"
+    "dorita980": "^3.0.13"
   },
   "deprecated": false,
   "description": "Adapter for iRobot",
