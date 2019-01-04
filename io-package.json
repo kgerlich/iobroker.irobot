@@ -1,0 +1,59 @@
+{
+    "common": {
+        "name": "irobot",
+        "version": "0.0.1",
+        "news": {
+            "0.0.1": {
+                "en": "initial adapter",
+                "de": "Initiale Version"
+            }
+        },
+		"title": "iRobot Adapter",
+        "titleLang": {
+            "en": "iRobot",
+            "de": "iRobot"
+        },
+        "desc": {
+            "en": "Adapter for iRobot devices",
+            "de": "Adapter für iRobot Geräte"
+        },
+        "authors": [
+            "Klaus Gerlicher <klaus@klausgerlicher.de>"
+        ],
+        "docs": {
+            "en": "docs/en/admin.md",
+            "de": "docs/de/admin.md"
+        },
+        "platform": "Javascript/Node.js",
+        "mode": "daemon",
+        "icon": "irobot.png",
+        "materialize": true,
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/kgerlich/ioBroker.irobot/master/admin/irobot.png",
+        "keywords": ["irobot", "LED"],
+        "readme": "https://github.com/kgerlich/ioBroker.irobot/blob/master/README.md",
+        "loglevel": "info",
+        "type": "household",
+        "license": "MIT",
+        "messagebox": false
+    },
+    "native": {
+        "blid": "*",
+        "password": "*",
+        "ip": "*"
+    },
+    "instanceObjects": [
+        {
+            "_id": "connected",
+            "type": "state",
+            "common": {
+                "name": "Info about connection to iRobot",
+                "type": "boolean",
+                "read":  true,
+                "write": false,
+				"role":  "indicator"
+            },
+            "native": {}
+        }
+    ]
+}
