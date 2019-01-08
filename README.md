@@ -2,47 +2,14 @@
 # ioBroker.irobot
 =================
 
-This adapter connects a Sureflap pet door connect to IoBroker.
+This adapter connects a iRobot Roomba to IoBroker.
 
-To use it enter your surepetcare.io website or Sureflap Connect app credentials on the settings page.
+It only supports very simple things like start, pause and docking the robot.
 
-Currently this only supports one household and one pet door in that household. I have had no time to
-do anything else.
+It will tell you if the robot is stuck and if it is in a cleaning cycle.
 
-The adapter creates one data-point under its instance for each pet. Name and presence information only.
-
-Sample usage in Javascript adapter (send mail if cat enters/exits through door, requires email adapter):
-
-<pre>
-function sendNotificationMail(subject, body="")
-{
-    var d = new Date();
-   
-    sendTo("email", {
-        from:    "from@owner.pet",
-        to:      "to@owner.pet",
-        subject: "[pet door notification " + d.toString() + "]: " + subject,
-        text:    body
-    });
-}
-
-function catChanged(obj)
-{
-    console.log(util.inspect(obj, { showHidden: true, depth: null }));
-    var name = obj.name;
-    if (obj.newState.val === true && obj.state.ack === true) {
-        console.log('pet in name: ' + name);
-        sendNotificationMail("pet " + name + " inside!", name);
-    } else if (obj.newState.val === false  && obj.state.ack === true) {
-        console.log('pet out name: ' + name);
-        sendNotificationMail("pet " + name + " outside!", name);
-    }
-}
-
-on(/^irobot\.0\.household.*\.pets\..*$/, catChanged);
-</pre>
-
-
+I will update this whenever I like but if you want some specific feature, please
+file an issue.
 
 ## License
 The MIT License (MIT)

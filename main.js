@@ -102,6 +102,7 @@ adapter.on('stateChange', function (id, state) {
                 .then(roomba.end())
                 .catch(); // disconnect to leave free the channel for the mobile app.
             });
+            create_button('start', 'start cleaning cycle', false);
         } else if (action == 'pause') {
             let roomba = new dorita980.Local(adapter.config.blid, adapter.config.password, adapter.config.ip);
 
@@ -110,6 +111,7 @@ adapter.on('stateChange', function (id, state) {
                 .then(roomba.end())
                 .catch(); // disconnect to leave free the channel for the mobile app.
             });
+            create_button('pause', 'pause cleaning cycle', false);
         } else if (action == 'dock') {
             let roomba = new dorita980.Local(adapter.config.blid, adapter.config.password, adapter.config.ip);
 
@@ -118,6 +120,7 @@ adapter.on('stateChange', function (id, state) {
                 .then(roomba.end())
                 .catch(); // disconnect to leave free the channel for the mobile app.
             });
+            create_button('dock', 'return to dock', false);
         } 
     }
 });
