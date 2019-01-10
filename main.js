@@ -170,7 +170,7 @@ function update_state() {
     let roomba = new dorita980.Local(adapter.config.blid, adapter.config.password, adapter.config.ip);
 
     roomba.getRobotState(['cleanMissionStatus']).then((actualState) => {
-        adapter.log.info(actualState);
+        adapter.log.debug(actualState);
         roomba.end();
 
         create_indicator('clean', 'true if cleaning active', actualState.cleanMissionStatus.cycle == 'clean' ? true : false);
